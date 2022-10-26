@@ -1,0 +1,43 @@
+﻿@using CustomValid_AspTag_HtmlTagHelper.ViewModels
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+
+@*@model IEnumerable<CustomValid_AspTag_HtmlTagHelper.ViewModels.PersonPetVM>
+*@
+@model IEnumerable<PersonPetVM>
+<h1>PERSON-PET LİSTESİ</h1>
+<br />
+<table class="table table-bordered">
+    <thead class="table-dark">
+    <tr>
+        <th>@Html.DisplayNameFor(model=>model.InsanAdi)</th>
+        <th>Insan Yaşı</th>
+        <th>Şehir</th>
+        <th>@Html.DisplayNameFor(model=>model.HayvanAdi)</th>
+        <th>Tür</th>
+        <th>Ayak Sayısı</th>
+        <th>Hayvan Yaşı</th>
+        <th>Hayvan Kilosu</th>
+        <th>Beslenme Türü</th>
+    </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach (var item in Model)
+            {
+                <tr>
+                <td>@item.InsanAdi</td>
+                <td>@item.InsanYas</td>
+                <td>@item.Sehir</td>
+                <td>@item.HayvanAdi</td>
+                <td>@item.Tur</td>
+                <td>@item.AyakSayisi</td>
+                <td>@item.HayvanYas</td>
+                <td>@item.HayvanKilo</td>
+                <td>@item.HayvanBeslenmeTuru</td>
+                <td><a class="btn btn-info">Düzenle</a></td>
+               
+                </tr>
+            }
+        }
+    </tbody>
+</table>

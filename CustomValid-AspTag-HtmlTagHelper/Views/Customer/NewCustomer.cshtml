@@ -1,0 +1,59 @@
+﻿@using CustomValid_AspTag_HtmlTagHelper.Models
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Customer
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10">
+            <h1>Yeni Müşteri</h1>
+            <form asp-action="NewCustomer">
+                <div>
+                    <label class="form-label" asp-for="CustomerId"></label>
+                    <input asp-for="CustomerId" class="form-control mb-2" placeholder="ID" />
+                    <span asp-validation-for="CustomerId"></span>
+                </div>
+                <div>
+                    <label class="form-label" asp-for="CompanyName"></label>
+                    <input asp-for="CompanyName" class="form-control mb-2" placeholder="Company Name" />
+                    <span asp-validation-for="CompanyName"></span>
+                </div>
+                <div>
+                    <label class="form-label" asp-for="Age"></label>
+                    <input asp-for="Age" class="form-control mb-2" placeholder="Age" />
+                    <span asp-validation-for="Age"></span>
+                    @*  @Html.Label("Age :")
+                    @Html.TextBoxFor(x=>x.Age)
+                    @Html.ValidationMessageFor(x=>x.Age,"***")*@
+                </div>
+                <div>
+                    <label class="form-label" asp-for="Email"></label>
+                    <input asp-for="Email" class="form-control mb-2" placeholder="E-Mail" />
+                    <span asp-validation-for="Email"></span>
+                    @*@Html.Label("Email :")
+                    @Html.TextBoxFor(x=>x.Email)
+                    @Html.ValidationMessageFor(x=>x.Email,"***")*@
+                </div>
+                <div>
+                    <label class="form-label" asp-for="JoinDate"></label>
+                    <input asp-for="JoinDate" class="form-control mb-2" />
+                    <span asp-validation-for="JoinDate"></span>
+                </div>
+                <div>
+                    <label class="form-label" asp-for="CustomerTipi"></label>
+                    <select asp-for="CustomerTipi" asp-items="@Html.GetEnumSelectList<CustomerType>()" class="dropdown-menu-start mb-2"></select>
+                    <span asp-validation-for="CustomerTipi"></span>
+                </div>
+                <div class="text-danger" asp-validation-summary="All"></div>
+                <div>
+                    <input class="mt-4 btn btn-success" type="submit" value="NewCustomer" />
+                </div>
+            </form>
+        </div>
+        <div class="col-md-2">@ViewBag.hayal</div>
+    </div>
+</div>

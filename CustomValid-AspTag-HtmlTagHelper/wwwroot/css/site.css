@@ -1,0 +1,35 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: rgb(195, 120, 67,0.8);
+}
+.col-1 {
+    background-color: rgb(53, 105, 45,0.6);
+}
+
+.col-2{
+    margin:50px;
+}
+.form-control{
+    background-color:rgb(217, 251, 131,0.3)
+}
+h1{
+    color:darkgreen;
+}
+
+   
+    

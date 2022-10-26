@@ -1,0 +1,83 @@
+﻿@model IEnumerable<CustomValid_AspTag_HtmlTagHelper.ViewModels.PersonPetVM>
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.InsanAdi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InsanYas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sehir)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HayvanAdi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tur)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AyakSayisi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HayvanYas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HayvanKilo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HayvanBeslenmeTuru)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.InsanAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InsanYas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sehir)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HayvanAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tur)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AyakSayisi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HayvanYas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HayvanKilo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HayvanBeslenmeTuru)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

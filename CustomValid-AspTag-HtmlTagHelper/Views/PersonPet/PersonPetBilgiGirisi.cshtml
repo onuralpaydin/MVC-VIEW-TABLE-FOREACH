@@ -1,0 +1,64 @@
+﻿@model CustomValid_AspTag_HtmlTagHelper.ViewModels.PersonPetVM
+
+@{
+    ViewData["Title"] = "KisiBilgi";
+}
+
+<h1 class="col-md-8">Person-Pet Kayıt</h1>
+
+<div class="row">
+    <div class="col-md-4 col-1">
+        <form asp-action="PersonPetBilgiGirisi">
+            <div class="form-group">
+                <label asp-for="InsanAdi" class="control-label m-2"></label>
+                <input asp-for="InsanAdi" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="InsanYas" class="control-label m-2"></label>
+                <input asp-for="InsanYas" class="form-control " />
+            </div>
+            <div class="form-group">
+                <label asp-for="Sehir" class="control-label m-2"></label>
+                <input asp-for="Sehir" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="HayvanAdi" class="control-label m-2"></label>
+                <input asp-for="HayvanAdi" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Tur" class="control-label m-2"></label>
+                <input asp-for="Tur" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="AyakSayisi" class="control-label m-2"></label>
+                <input asp-for="AyakSayisi" class="form-control" />
+            </div>
+            <div class="form-group"> 
+                <label asp-for="HayvanYas" class="control-label m-2"></label>
+                <input asp-for="HayvanYas" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="HayvanKilo" class="control-label m-2"></label>
+                <input asp-for="HayvanKilo" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="HayvanBeslenmeTuru" class="control-label m-2"></label>
+                <select asp-for="HayvanBeslenmeTuru" asp-items="@Html.GetEnumSelectList<BeslenmeTuru>()" class="bg-body bg-opacity-75 text-white-50 mt-3"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Kaydet" class="btn btn-success" />
+            </div>
+            <div asp-validation-summary="All" class="text-danger"></div>
+        </form>
+    </div>
+    <div class="col-md-6 col-2">
+        <img src="~/cat-323262__480.jpg" class="resim">
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }
